@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript onkeydown Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #keyBox {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px dashed gray;
+      background: #f9f9f9;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Press Any Key (Using <code>onkeydown</code>)</h2>
+
+  <!-- Input box to focus on key press -->
+  <input type="text" id="inputBox" placeholder="Click here and press any key" onkeydown="handleKeyDown(event)" style="width: 100%; padding: 10px; font-size: 18px;" />
+
+  <div id="keyBox">Pressed key will appear here</div>
+
+  <script>
+    function handleKeyDown(event) {
+      const keyName = event.key;
+      const code = event.code;
+      const keyCode = event.keyCode;
+      
+      document.getElementById("keyBox").innerHTML = `
+        <strong>Key:</strong> ${keyName} <br>
+        <strong>Code:</strong> ${code} <br>
+        <strong>Key Code:</strong> ${keyCode}
+      `;
+    }
+  </script>
+
+</body>
+</html>

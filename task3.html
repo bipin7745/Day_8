@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Events - All Controls Example</title>
+  <style>
+    body {
+         font-family: Arial;
+          padding: 20px;
+       
+ }
+    .box {
+         margin-bottom: 15px; 
+       
+        }
+    #hoverBox {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      line-height: 100px;
+      text-align: center;
+      border: 2px solid #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Events: All Controls in One Example</h2>
+
+  <div class="box">
+    <label>Text Input:</label>
+    <input type="text" id="textInput" onchange="onTextChange()">
+    <p id="textOutput"></p>
+  </div>
+
+  
+  <div class="box">
+    <label>Textarea:</label><br>
+    <textarea id="textArea" oninput="onTextareaInput()"></textarea>
+    <p id="textAreaOutput"></p>
+  </div>
+
+  <div class="box">
+    <label>Select Fruit:</label>
+    <select id="fruitSelect" onchange="onFruitChange()">
+      <option value="">-- Select --</option>
+      <option value="Apple">Apple</option>
+      <option value="Banana">Banana</option>
+      <option value="Cherry">Cherry</option>
+    </select>
+    <p id="fruitOutput"></p>
+  </div>
+
+
+  <div class="box">
+    <label>Choose Gender:</label><br>
+    <input type="radio" name="gender" value="Male" onchange="onGenderChange()"> Male
+    <input type="radio" name="gender" value="Female" onchange="onGenderChange()"> Female
+    <p id="genderOutput"></p>
+  </div>
+
+ 
+  <div class="box">
+    <input type="checkbox" id="subscribeCheckbox" onchange="onSubscribeToggle()">
+    <label for="subscribeCheckbox">Subscribe to newsletter</label>
+    <p id="subscribeOutput"></p>
+  </div>
+
+  <div class="box">
+    <button onclick="onButtonClick()">Click Me</button>
+    <p id="buttonOutput"></p>
+  </div>
+
+  <div class="box">
+    <div id="hoverBox" onmouseover="onMouseOver()" onmouseout="onMouseOut()">Hover over me!</div>
+    <p id="hoverOutput"></p>
+  </div>
+
+  <script>
+    
+    function onTextChange() {
+      const value = document.getElementById("textInput").value;
+      document.getElementById("textOutput").innerText = "Text input changed to: " + value;
+    }
+
+    
+    function onTextareaInput() {
+      const value = document.getElementById("textArea").value;
+      document.getElementById("textAreaOutput").innerText = "Textarea content: " + value;
+    }
+
+
+    function onFruitChange() {
+      const value = document.getElementById("fruitSelect").value;
+      document.getElementById("fruitOutput").innerText = "You selected: " + value;
+    }
+
+    
+    function onGenderChange() {
+      const radios = document.getElementsByName("gender");
+      let selected = "";
+      radios.forEach(radio => {
+        if (radio.checked) selected = radio.value;
+      });
+      document.getElementById("genderOutput").innerText = "Gender: " + selected;
+    }
+
+
+    function onSubscribeToggle() {
+      const isChecked = document.getElementById("subscribeCheckbox").checked;
+      document.getElementById("subscribeOutput").innerText = isChecked ? "Subscribed!" : "Not Subscribed.";
+    }
+
+  
+    function onButtonClick() {
+      document.getElementById("buttonOutput").innerText = "Button was clicked!";
+    }
+
+    function onMouseOver() {
+      document.getElementById("hoverBox").style.backgroundColor = "lightgreen";
+      document.getElementById("hoverOutput").innerText = "Mouse is over the box.";
+    }
+
+    function onMouseOut() {
+      document.getElementById("hoverBox").style.backgroundColor = "lightgray";
+      document.getElementById("hoverOutput").innerText = "Mouse left the box.";
+    }
+  </script>
+
+</body>
+</html>

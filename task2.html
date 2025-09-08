@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseHover Events</title>
+</head>
+<body>
+    <button onmouseover="MouseOver(this)" onmouseout="MouseOut()"> submit</button>
+    <script>
+        function MouseOver(x)
+        {
+            x.style.backgroundColor = "red";
+            x.style.color = "yellow";
+            x.style.borderColor = "blue";
+            x.style.transform = "scale(1.1)";
+        }
+        function MouseOut(y)
+        {
+            y.style.backgroundColor = "white";
+            y.style.color = "black";
+            y.style.borderColor = "gray";
+            y.style.transform = "scale(1)";
+        }
+    </script>
+</body>
+</html>

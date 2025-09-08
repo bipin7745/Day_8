@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #hoverBox {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      line-height: 100px;
+      text-align: center;
+      border: 2px solid #333;
+      margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+   
+    <select id="mySelect" onchange="Select()">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volvo">Volvo</option>
+    </select>
+    
+
+    
+    <div id="hoverBox" onmouseover="onMouseOver()" onmouseout="onMouseOut()">Hover over me!</div>
+    <p id="hoverOutput"></p>
+ 
+
+    
+    <button onclick="onButtonClick()">Click Me</button>
+    <p id="buttonOutput"></p>
+    
+
+   
+  <div id="keyBox">Pressed key will appear here</div>
+
+     <input type="text"  onkeydown="keypress(event)">
+<p id="demo"> </p>
+
+
+    <script>
+   function Select()
+   {
+    let x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+   }
+
+   function onButtonClick() {
+      document.getElementById("buttonOutput").innerText = "Button was clicked!";
+    }
+
+     function onMouseOver() {
+      document.getElementById("hoverBox").style.backgroundColor = "lightgreen";
+      document.getElementById("hoverOutput").innerText = "Mouse is over the box.";
+    }
+
+    function onMouseOut() {
+      document.getElementById("hoverBox").style.backgroundColor = "lightgray";
+      document.getElementById("hoverOutput").innerText = "Mouse left the box.";
+    }
+    function keypress(event)
+    {
+         document.getElementById("demo").innerHTML = event.key;
+    }
+    </script>
+</body>
+</html>

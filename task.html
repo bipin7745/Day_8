@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Program</title>
+</head>
+<body>
+    <p id="demo">
+
+    </p>
+    <script>
+        let firstname = "bipin";
+        let lastname = "Kanjariya";
+        let age = 20;
+        
+        let fullname = "my Name is  " + firstname +"  "+ lastname;
+
+        let fullName=` my Name is   ${firstname}   ${lastname}`;
+        let age1 = `this is age ${age+1} `;
+        let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+
+        document.getElementById("demo").innerHTML = fullname +"<br>"+fullName+"<br>"+age1+"<br>"+text ;
+    </script>
+</body>
+</html>
